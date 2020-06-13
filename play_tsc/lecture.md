@@ -40,3 +40,15 @@ edit `package.json`
     "build:watch": "tsc --watch"
 },
 ```
+
+- Install jest
+```
+npm install --save-dev jest ts-jest @types/jest
+./node_modules/.bin/ts-jest config:init
+npm install --save-dev eslint-plugin-jest
+```
+
+jest has watch option to run when test is updated
+```
+./node_modules/.bin/jest --watch
+```
