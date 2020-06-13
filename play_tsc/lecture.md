@@ -21,3 +21,8 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslin
 ? Would you like to install them now with npm? Yes
 
 ```
+
+- Install source map
+```
+npm install --save-dev source-map-support
+```
