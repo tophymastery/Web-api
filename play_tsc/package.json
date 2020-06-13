@@ -2,8 +2,9 @@
   "name": "play_tsc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/my.js",
   "dependencies": {
+    "nodemon": "^2.0.4",
     "typescript": "^3.9.3"
   },
   "devDependencies": {
@@ -18,7 +19,9 @@
     "source-map-support": "^0.5.19"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=dev nodemon ./dist/my.js",
+    "build:watch": "tsc --watch"
   },
   "author": "",
   "license": "ISC"

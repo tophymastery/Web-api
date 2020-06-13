@@ -26,3 +26,9 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslin
 ```
 npm install --save-dev source-map-support
 ```
+
+- Install nodemon
+```
+npm install --save nodemon
+/node_modules/.bin/tsc --watch
+```
