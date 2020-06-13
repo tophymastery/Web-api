@@ -32,3 +32,11 @@ npm install --save-dev source-map-support
 npm install --save nodemon
 /node_modules/.bin/tsc --watch
 ```
+edit `package.json`
+```json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=dev nodemon ./dist/my.js",
+    "build:watch": "tsc --watch"
+},
+```
