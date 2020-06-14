@@ -1,6 +1,7 @@
 import 'source-map-support/register'
 import * as basic from './01_types/01_basictype'
 import * as cls from './01_types/02_class'
+import * as interf from './01_types/interface'
 
 // inport examples
 // import { Func1, Func2 } from './funcs'
@@ -19,3 +20,7 @@ basic.execute('input', (err, res) => {
 
 const reg = new cls.Regtangle(2, 3)
 console.log(reg.area())
+
+const reg2 = interf.SecondRect
+const secondReg = interf.area(reg2)
+console.log(secondReg)
