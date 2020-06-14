@@ -1,7 +1,7 @@
 import 'source-map-support/register'
 import * as basic from './01_types/01_basictype'
 import * as cls from './01_types/02_class'
-import * as interf from './01_types/interface'
+import * as interf from './01_types/03_interface'
 
 // inport examples
 // import { Func1, Func2 } from './funcs'
