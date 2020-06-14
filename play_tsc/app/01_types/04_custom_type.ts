@@ -85,3 +85,33 @@ export function areaShape (shape: Shape): number {
     case 'circle': return Math.PI * shape.radius ** 2
   }
 }
+
+interface DisconnectedDb {
+  status: 'disconnected'
+  connect: () => void
+}
+
+interface ConnectedDb {
+  status: 'connected'
+  query: () => Array<any>
+  disconnect: () => void
+}
+
+type DbConnection = DisconnectedDb | ConnectedDb
+export function connect (connection: DbConnection) {
+  if (connection.status === 'disconnected') {
+    connection.connect()
+  }
+}
+
+export function query (connection: DbConnection) {
+  if (connection.status === 'connected') {
+    connection.query()
+  }
+}
+
+export function disconnect (connection: DbConnection) {
+  if (connection.status === 'connected') {
+    connection.disconnect()
+  }
+}
