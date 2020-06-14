@@ -52,3 +52,14 @@ jest has watch option to run when test is updated
 ```
 ./node_modules/.bin/jest --watch
 ```
+
+#### Note - installing javascript library with `Definitely Typed`
+we can installing javascript lib with command `npm install --save loash`
+but installing this way we can't know type when we import so intellisense not working
+```javascript
+import * as _ from 'lodash'
+```
+
+but if we install with command `npm install --save @type/lodash` then import like above. Intellisense is working properly
+
+ref: https://definitelytyped.org/
