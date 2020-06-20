@@ -19,9 +19,29 @@ app.post('/', (req, res) => {
 
 app.post('/calc', (req, res) => {
   const { operation, firstNumber, secondNumber } = req.body
-  res.json({
-    result: firstNumber + secondNumber
-  })
+
+  switch (operation) {
+    case '+': return res.json({
+      result: firstNumber + secondNumber
+    })
+
+    case '-': return res.json({
+      result: firstNumber - secondNumber
+    })
+
+    case '*': return res.json({
+      result: firstNumber * secondNumber
+    })
+
+    case '/': return res.json({
+      result: firstNumber / secondNumber
+    })
+
+    default: return res.status(422).json({
+      error: true,
+      message: 'Invalid operation'
+    })
+  }
 })
 
 if (Config.NODE_ENV !== 'TEST') {
