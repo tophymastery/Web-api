@@ -1,5 +1,6 @@
 import * as Express from 'express'
 import Config from './config'
+import { calc, Operation } from '../app/calc'
 
 const app = Express()
 
@@ -19,29 +20,20 @@ app.post('/', (req, res) => {
 
 app.post('/calc', (req, res) => {
   const { operation, firstNumber, secondNumber } = req.body
+  const allowOperation = Object.values(Operation)
 
-  switch (operation) {
-    case '+': return res.json({
-      result: firstNumber + secondNumber
-    })
-
-    case '-': return res.json({
-      result: firstNumber - secondNumber
-    })
-
-    case '*': return res.json({
-      result: firstNumber * secondNumber
-    })
-
-    case '/': return res.json({
-      result: firstNumber / secondNumber
-    })
-
-    default: return res.status(422).json({
+  if (!allowOperation.includes(operation)) {
+    return res.status(422).json({
       error: true,
       message: 'Invalid operation'
     })
   }
+
+  const result = calc(firstNumber, secondNumber, operation)
+
+  return res.json({
+    result: result
+  })
 })
 
 if (Config.NODE_ENV !== 'TEST') {
