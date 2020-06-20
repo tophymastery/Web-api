@@ -63,3 +63,5 @@ import * as _ from 'lodash'
 but if we install with command `npm install --save @type/lodash` then import like above. Intellisense is working properly
 
 ref: https://definitelytyped.org/
+
+`npm install --save-dev supertest`

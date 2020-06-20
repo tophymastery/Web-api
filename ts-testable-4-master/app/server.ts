@@ -7,14 +7,18 @@ app.use(Express.json())
 const port = Config.port
 
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.send('Hello world tophy')
 })
 
 app.post('/', (req, res) => {
   res.json({
     success: true,
-    postedPayload: JSON.stringify(req.body, null, 2)
+    postedPayload: JSON.stringify(req.body)
   })
+})
+
+app.post('calc', (req, res) => {
+  res.send('nothing')
 })
 
 if (Config.NODE_ENV !== 'TEST') {
