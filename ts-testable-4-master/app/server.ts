@@ -7,7 +7,7 @@ app.use(Express.json())
 const port = Config.port
 
 app.get('/', (req, res) => {
-  res.send('Hello world tophy')
+  res.send('Hello world')
 })
 
 app.post('/', (req, res) => {
@@ -17,8 +17,11 @@ app.post('/', (req, res) => {
   })
 })
 
-app.post('calc', (req, res) => {
-  res.send('nothing')
+app.post('/calc', (req, res) => {
+  const { operation, firstNumber, secondNumber } = req.body
+  res.json({
+    result: firstNumber + secondNumber
+  })
 })
 
 if (Config.NODE_ENV !== 'TEST') {
